@@ -4,6 +4,12 @@ node_js:
   - "6"
   - "7"
 
+before_install:
+  - curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.18.0/minikube-linux-amd64
+  - chmod +x minikube
+  - export PATH=$PATH:$PWD
+  - minikube start
+
 install:
   - npm install
   - npm run build
